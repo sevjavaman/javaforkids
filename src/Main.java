@@ -15,6 +15,8 @@ public class Main {
 	int levelNumber=1;
 	//кнопка для отправки кода
 	static JButton b;
+	//кнопка для перехода далее
+	static JButton next;
 	//поле для ввода кода
 	static JTextArea ta;
 
@@ -49,12 +51,14 @@ public class Main {
 		JPanel p = new JPanel();
 		p.setLayout(new FlowLayout());
 		JLabel l=new JLabel("Напиши код:");
-		ta=new JTextArea(5,50);
+		ta=new JTextArea(5,30);
 		b=new JButton("Отправить");
+		next=new JButton("Далее");
 		
 		p.add(l);
 		p.add(ta);
 		p.add(b);
+		p.add(next);
 		
 		gbl.setConstraints(p,c);
 		f.add(p);		
@@ -62,20 +66,11 @@ public class Main {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);	
 		
-		levelChoise();
-	}
-	
-	public void levelChoise(){
-		switch(levelNumber){
-		case 1:
-			//стираем то, что было нарисовано
-			gui.removeRenders();
-			Level1 l1=new Level1();
-			//рисуем 1-й уровень
-			gui.addRender(l1);
-			gui.repaint();
-			break;
-		}
+		Level1 l1=new Level1();
+		//рисуем 1-й уровень
+		gui.addRender(l1);
+		gui.repaint();
+	}	
+
 	}
 
-}

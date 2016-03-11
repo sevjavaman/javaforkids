@@ -6,16 +6,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 //класс, в котором реализуется логика уровня
-public class Level1 implements IRenderToConvas{
+public class Level2 implements IRenderToConvas{
 	int check;
 	
-	Level1(){
+	Level2(){
 		Main.b.addActionListener(new L1Listener());
-		Main.next.addActionListener(new NextListener());
 	}
 
 	public void render(Graphics g){
-		ImageIcon i3 = new ImageIcon(getClass().getResource("img/Duke_Wave.png"));
+		ImageIcon i3 = new ImageIcon(getClass().getResource("img/duke_joker.png"));
 		Image im3=i3.getImage();
 		g.drawImage(im3, 125, 50, 50, 50, null);
 		
@@ -49,21 +48,6 @@ public class Level1 implements IRenderToConvas{
 				check=2;
 				Main.gui.repaint();
 			}
-			
-		}
-		
-	}
-	
-	class NextListener implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			//стираем то, что было нарисовано
-			Main.gui.removeRenders();
-			Level2 l2=new Level2();
-			//рисуем 1-й уровень
-			Main.gui.addRender(l2);
-			Main.gui.repaint();
 			
 		}
 		
