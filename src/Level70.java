@@ -23,15 +23,21 @@ public class Level70 implements IRenderToConvas{
 		g.drawString("Привет, это опять я!", 230, 50);
 		g.drawString("Сегодня ты познакомишься с оператором switch!", 230, 100);
 		g.drawString("switch(ВыражениеДляСравнения){", 230, 150);
-		g.drawString("case Совпадение: ", 230, 170);
-		g.drawString("оператор;", 230, 190);
-		g.drawString("break;}", 230, 210);
+		g.drawString("    case Совпадение1: ", 230, 170);
+		g.drawString("        оператор;", 230, 190);
+		g.drawString("        break;", 230, 210);
+		g.drawString("    case Совпадение2: ", 230, 230);
+		g.drawString("        оператор;", 230, 250);
+		g.drawString("        break;}", 230, 270);
+		
+		g.drawString("Ну а теперь помоги мне пожайлусто с написанием одной игры.", 230, 320);
+		g.drawString("Я тебе говорю \"лови\" или \"кидай\"(String string).", 230, 370);
+		g.drawString("И если я сказал лови, ты должен ответить \"ловлю!\"", 230, 390);
+		g.drawString("А если кидай - \"кидаю!\"", 230, 410);
 		
 		if(check==1){
-			g.setColor(Color.red);
-			g.drawString("Привет!", 230, 300);
-			g.setColor(Color.black);
-			g.drawString("Отлично! Ты научился выводить информацию на экран!", 260, 300);
+			g.setColor(Color.green);
+			g.drawString("Отлично! Ты научился выводить пользоваться оператором switch", 230, 430);
 		}else{
 		if(check==2){
 			g.drawString("В коде допущена ошибка!", 260, 300);
@@ -44,7 +50,7 @@ public class Level70 implements IRenderToConvas{
 		public void actionPerformed(ActionEvent arg0) {
 			String code=Main.ta.getText();
 			//проверяем код, который ввел пользователь
-			if(code.equals("System.out.print(\"Привет!\")")){
+			if(code.equals("switch(string){\ncase \"лови\":\nSystem.out.println(\"ловлю!\");\nbreak;\ncase \"кидай\":\nSystem.out.println(\"кидаю!\");\nbreak;\n}")){
 				check=1;
 				Main.gui.repaint();
 			}else{
