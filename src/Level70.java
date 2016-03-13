@@ -20,9 +20,12 @@ public class Level70 implements IRenderToConvas{
 		g.drawImage(im3, 125, 50, 50, 50, null);
 		
 		g.setColor(Color.black);
-		g.drawString("Привет, меня зовут Дюк!", 230, 50);
-		g.drawString("Поздоровайся со мной!", 230, 100);
-		g.drawString("Для этого напиши код: System.out.print(\"Привет!\")", 230, 150);
+		g.drawString("Привет, это опять я!", 230, 50);
+		g.drawString("Сегодня ты познакомишься с оператором switch!", 230, 100);
+		g.drawString("switch(ВыражениеДляСравнения){", 230, 150);
+		g.drawString("case Совпадение: ", 230, 170);
+		g.drawString("оператор;", 230, 190);
+		g.drawString("break;}", 230, 210);
 		
 		if(check==1){
 			g.setColor(Color.red);
@@ -38,7 +41,6 @@ public class Level70 implements IRenderToConvas{
 	
 	class L1Listener implements ActionListener{
 
-		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			String code=Main.ta.getText();
 			//проверяем код, который ввел пользователь
@@ -56,7 +58,6 @@ public class Level70 implements IRenderToConvas{
 	
 	class NextListener implements ActionListener{
 
-		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			//стираем то, что было нарисовано
 			Main.gui.removeRenders();
