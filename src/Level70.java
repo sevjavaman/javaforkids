@@ -37,7 +37,7 @@ public class Level70 implements IRenderToConvas{
 		
 		if(check==1){
 			g.setColor(Color.green);
-			g.drawString("Отлично! Ты научился выводить пользоваться оператором switch", 230, 430);
+			g.drawString("Отлично! Ты научился выводить пользоваться оператором switch", 300, 430);
 		}else{
 		if(check==2){
 			g.drawString("В коде допущена ошибка!", 260, 300);
