@@ -21,7 +21,7 @@ public class Level2 implements IRenderToConvas{
 		g.setColor(Color.black);
 		g.drawString("Привет, меня зовут Дюк!", 230, 50);
 		g.drawString("Поздоровайся со мной!", 230, 100);
-		g.drawString("Для этого напиши код: System.out.print(\"Привет!\")", 230, 150);
+		g.drawString("Для этого напиши код: System.out.print(\"Привет!\");", 230, 150);
 		
 		if(check==1){
 			g.setColor(Color.red);
@@ -41,7 +41,7 @@ public class Level2 implements IRenderToConvas{
 		public void actionPerformed(ActionEvent arg0) {
 			String code=Main.ta.getText();
 			//проверяем код, который ввел пользователь
-			if(code.equals("System.out.print(\"Привет!\")")){
+			if(code.equals("System.out.print(\"Привет!\");")){
 				check=1;
 				Main.gui.repaint();
 			}else{
