@@ -61,7 +61,7 @@ public class Level1 implements IRenderToConvas{
 			//стираем то, что было нарисовано
 			Main.gui.removeRenders();
 			Level2 l2=new Level2();
-			//рисуем 1-й уровень
+			//рисуем 2-й уровень
 			Main.gui.addRender(l2);
 			Main.gui.repaint();
 			

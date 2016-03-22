@@ -28,6 +28,7 @@ public class Level2 implements IRenderToConvas{
 			g.drawString("Привет!", 230, 300);
 			g.setColor(Color.black);
 			g.drawString("Отлично! Ты научился выводить информацию на экран!", 260, 300);
+	
 		}else{
 		if(check==2){
 			g.drawString("В коде допущена ошибка!", 260, 300);
@@ -43,7 +44,9 @@ public class Level2 implements IRenderToConvas{
 			//проверяем код, который ввел пользователь
 			if(code.equals("System.out.print(\"Привет!\");")){
 				check=1;
+				
 				Main.gui.repaint();
+				
 			}else{
 				check=2;
 				Main.gui.repaint();
