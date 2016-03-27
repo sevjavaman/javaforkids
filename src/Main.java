@@ -66,9 +66,9 @@ public class Main{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 
-		Level70 l70 = new Level70();
+		Level25 l25 = new Level25();
 		//рисуем 1-й уровень
-		gui.addRender(l70);
+		gui.addRender(l25);
 		gui.repaint();
 	}
 
