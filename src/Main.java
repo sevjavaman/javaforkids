@@ -67,8 +67,9 @@ public class Main{
 		f.setVisible(true);
 
 		Level25 l25 = new Level25();
+		LevelFor lf = new LevelFor();
 		//рисуем 1-й уровень
-		gui.addRender(l25);
+		gui.addRender(lf);
 		gui.repaint();
 	}
 

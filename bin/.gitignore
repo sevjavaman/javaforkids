@@ -1,4 +1,3 @@
-/img/
 /Gui.class
 /IRenderToConvas.class
 /Level1$L1Listener.class
@@ -6,6 +5,9 @@
 /Level1.class
 /Level2$L1Listener.class
 /Level2.class
+/Level25$L1Listener.class
+/Level25$NextListener.class
+/Level25.class
 /Level3.class
 /Level4$L1Listener.class
 /Level4$NextListener.class
@@ -14,8 +16,7 @@
 /Level70$NextListener.class
 /Level70.class
 /Main.class
-/Level35.class
-/Level25.class
-/Level25$L1Listener.class
-/Level25$L1Listener$NextListener.class
-/Level25$NextListener.class
+/img/
+/LevelFor.class
+/LevelFor$L1Listener.class
+/LevelFor$NextListener.class
