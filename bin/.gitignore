@@ -20,6 +20,12 @@
 /LevelFor.class
 /Main.class
 /img/
+<<<<<<< HEAD
 /LevelSwitch.class
 /LevelSwitch$1.class
 /LevelSwitch$1$1.class
+=======
+/LevelFor$Frame.class
+/LevelFor/
+/imgforLevelFor/
+>>>>>>> 35533a7c85edc01829712ced77d8113f1e84b882
