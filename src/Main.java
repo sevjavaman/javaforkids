@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import com.sun.glass.ui.Window.Level;
+
 public class Main{
 	static Gui gui = new Gui();
 	int levelNumber = 1;
@@ -66,10 +68,11 @@ public class Main{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 
+		LevelSwitch levelSwitch = new LevelSwitch(ta, b);
 		Level25 l25 = new Level25();
 		LevelFor lf = new LevelFor();
 		//рисуем 1-й уровень
-		gui.addRender(lf);
+		gui.addRender(levelSwitch);
 		gui.repaint();
 	}
 
