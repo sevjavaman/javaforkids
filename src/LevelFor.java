@@ -50,12 +50,14 @@ public LevelFor(){
 		g.drawString("Теперь попробуй записать следующее выражение : ", 175, 275);
 		g.setColor(Color.DARK_GRAY);
 		g.setFont(BigFontTR);
-		g.drawString("for(int i = 0; i < 10; i++) System.out.print(i);", 175, 325);
+		g.drawString("for(int i = 0; i < 9; i++) System.out.print(i);", 175, 325);
 
 		if(check == 1){
 			g.setColor(Color.green);
 			g.setFont(BigFontTR);
 			g.drawString("Молодец! Ты научился пользоваться циклом for!", 50, 375);
+			LevelForTest lft = new LevelForTest();
+			lft.main(check);
 		}if(check == 2){
 			g.setFont(BigFontTR);
 			g.setColor(Color.red);
@@ -68,10 +70,9 @@ public LevelFor(){
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			String code=Main.ta.getText();
 			//проверяем код, который ввел пользователь
-			if(code.equals("for(int i = 0; i < 10; i++) System.out.print(i);")){
+			if(code.equals("for(int i = 0; i < 9; i++) System.out.print(i);")){
 				check=1;
 				Main.gui.repaint();
 			}else{
