@@ -1,41 +1,78 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import java.util.Scanner;
+import javax.swing.ImageIcon;
 
-public class Level4 {
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println(" Приветствую тебя,дружище!");
-		System.out.println(" Сегодня я повстречался с магом и чародеем и он поведал мне о том, как зарабатывать ещё больше (и заодно, как создавать и проверять условия на java.");
-		System.out.println("Как и в любом языке программирования, условные циклы строятся по принципу if - then - else. В eclipse в части if мы задаём логическое условие(например, ты задолжал мне 200 рублей), которое может быть ложью или,как в нашем случае, правдой.  ");
-		System.out.println("В части then выполняются действия, которые происходят,если логическое выражение правдиво. Например, вернуть деньги,взять кредит, взять ипотеку. ");
-		System.out.println(" В части else мы выполняем то, что выполняется в случае того,когда наше выражение ложно.");
-		System.out.println(" В условии используются знаки больше,меньше и равно и т.д.");
-		System.out.println(" Например, а>b, 12>9,13*2 = 25+1");
-		System.out.println("Вот так выглядит конструкция условия в java:  ");
-		System.out.println("if (логическое выражение(13>7)) { ");
-		System.out.println(" System.out.print(text }       ");
-		System.out.println("  else{ ");
-		System.out.println("     }");
-		System.out.println("А теперь попробуй написать условную конструкцию, где проверяется условие a>b и в случае, если это - правда- выводит на экран надпись а больше б. ");
-		String s = "if(a > b){ System.out.println";
-		int p1;
-		int p2;
-		p1 = s.indexOf("\"");
-		p2 = s.lastIndexOf("\"");
-		
-		String operator = s.substring(0,p1+1 )+s.substring(p2,s.length());
-		String value = s.substring(p1 +1,p2);
-		System.out.println(operator+" " +value);
- if (operator.equals("System.out.print(\"\");") ) {
-	 System.out.println("Всё верно!");
- }
- else{
-	 System.out.println("Попробуйте ещё раз.");
-	 
-	 
-	 
- }
+public class Level4 implements IRenderToConvas{
+	int check;
+	
+	Level4(){
+		Main.b.addActionListener(new L1Listener());
+		Main.next.addActionListener(new NextListener());
 	}
 
-}
+	public void render(Graphics g){
+		ImageIcon i3 = new ImageIcon(getClass().getResource("img/Duke_Wave.png"));
+		Image im3=i3.getImage();
+		g.drawImage(im3, 125, 50, 50, 50, null);
+		
+		g.setColor(Color.black);
+		g.drawString("Привет, и это опять я , Дюк!", 230, 50);
+		g.drawString("Сегодня я научу тебя тому, как проверять условие. ", 230, 100);
+		g.drawString("Для этого используется конструкция if(a>b) { command_name} else {command_name} ", 230, 150);
+		g.drawString("Знаю,всё непонятно,сейчас обьясню.На месте a>b может стоять любое логическое условие, ", 230, 200);
+		g.drawString("а на месте command_name  - то, что выполняется в случае,если выражение правдиво или ложно соответтственo.",230,250);
+		g.drawString("Попробуй написать проверку условия a > b где в случае,если a больше b пользователь увидит на экране надпись а > b.", 230, 300);
+		g.drawString("Вот как это выглядит:", 230, 350);
+		g.drawString("if (a > b) {", 230, 50);
+		g.drawString("System.out.print(\"a > b \");", 230, 400);
+		g.drawString("else{}", 230, 450);
+		if(check==1){
+			g.setColor(Color.red);
+			g.drawString("Привет!", 230, 300);
+			g.setColor(Color.black);
+			g.drawString("Отлично! Ты научился проверять условие!!", 260, 300);
+		}else{
+		if(check==2){
+			g.drawString("В коде допущена ошибка!", 260, 300);
+		}
+		}
+	}
+	
+	class L1Listener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			String code=Main.ta.getText();
+			//проверяем код, который ввел пользователь
+			if(code.equals("if (a > b) {  System.out.print(\"a > b \"); else{}")){
+				check=1;
+				Main.gui.repaint();
+			}else{
+				check=2;
+				Main.gui.repaint();
+			}
+			
+		}
+		
+	}
+	
+	class NextListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			//стираем то, что было нарисовано
+			Main.gui.removeRenders();
+			Level2 l2=new Level2();
+			//рисуем 1-й уровень
+			Main.gui.addRender(l2);
+			Main.gui.repaint();
+			
+		}
+		
+	}
+	
+	}
