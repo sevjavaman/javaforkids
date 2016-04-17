@@ -1,22 +1,17 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 //класс, в котором происходит рисование
 public class Gui extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//список объектов для отрисовки
+	@SuppressWarnings("unchecked")
 	ArrayList<IRenderToConvas> renders = new <IRenderToConvas>ArrayList();
 	//добавить объект для отрисовки
 	public void addRender(IRenderToConvas render) {
